@@ -1,7 +1,7 @@
 # business_rules.py
 # Author: Jean Carlos Reyes-Munoz
 
-APPROVAL_LIMIT = 1000
+APPROVAL_LIMIT = 1000  # module level constant
 
 
 def calculate_total(price: float, quantity: int) -> float:
@@ -15,10 +15,10 @@ def requires_review(amount: float) -> bool:
 
 
 def get_approval_tier(amount: float) -> str:
-    """Return the approval routing tier."""
+    """Return approval tier based on amount."""
     if amount <= 500:
         return "auto"
-    elif amount <= 1000:
+    elif amount <= 2000:
         return "manager"
     else:
         return "director"
